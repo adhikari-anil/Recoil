@@ -1,6 +1,6 @@
 import React from "react";
 import {useRecoilState, useRecoilValue } from "recoil";
-import { jobsAtom, messageAtom, networkAtom, notificationAtom } from "../recoil/atom";
+import { jobsAtom, messageAtom, networkAtom, notificationAtom, totalNotificationSelector } from "../recoil/atom";
 
 function RenderingButton() {
     const networkNotificationCount = useRecoilValue(networkAtom);
@@ -8,6 +8,10 @@ function RenderingButton() {
     const notificationCount = useRecoilValue(notificationAtom);
     const jobsCount = useRecoilValue(jobsAtom);   // useRecoilvalue hook return the value that is stored in an atom
     const [messageNotificationCount, setMessageNotification] = useRecoilState(messageAtom) //Its works useState..
+    
+    //This is Recoil Selector code or import done in frontend...
+    const totalNotificationCount = useRecoilValue(totalNotificationSelector);
+    
    return (
     <>
       <button>Home</button>
@@ -17,7 +21,7 @@ function RenderingButton() {
       <button>Notification ({notificationCount >100?"99+": notificationCount})</button>
       <button onClick={()=>{
         setMessageNotification(c=>c+1);
-      }}>Me</button>
+      }}>Me ({totalNotificationCount})</button>
     </>
   );
 }
