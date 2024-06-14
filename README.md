@@ -1,5 +1,6 @@
-##This Repo is all about Recoil.
-##Table of Content:
+<h1>This Repo is all about Recoil.</h1><br>
+<h3>Table of Content:</h3><br>
+<div>
    i. Basic:
     1. Intro
     2. Atoms
@@ -13,5 +14,5 @@
     2. selectorFamily
     3. useRecoilStateLoadable
     4. useRecoilValueLoadable
-
-## This are the protion we will cover in this repo.    
+</div>
+<h2>These are the protion we will cover in this repo.</h2>    
